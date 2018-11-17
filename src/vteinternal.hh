@@ -462,7 +462,8 @@ public:
          */
         vte::view::coords m_mouse_last_position;
         guint m_mouse_autoscroll_tag;
-        double m_mouse_smooth_scroll_delta{0.0};
+        double m_mouse_smooth_scroll_y_delta{0.0};
+        double m_mouse_smooth_scroll_x_delta{0.0};
 
 	/* State variables for handling match checks. */
         char* m_match_contents;
