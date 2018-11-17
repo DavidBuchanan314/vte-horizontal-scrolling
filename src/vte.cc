@@ -9453,6 +9453,11 @@ Terminal::widget_scroll(GdkEventScroll *event)
 		char *normal;
 		gssize normal_length;
 
+		if (fabs(m_mouse_smooth_scroll_x_delta) > fabs(m_mouse_smooth_scroll_y_delta))
+			m_mouse_smooth_scroll_y_delta = 0;
+		else
+			m_mouse_smooth_scroll_x_delta = 0;
+
 		xcnt = v * m_mouse_smooth_scroll_x_delta;
 		ycnt = v * m_mouse_smooth_scroll_y_delta;
 		if (xcnt == 0 && ycnt == 0)
